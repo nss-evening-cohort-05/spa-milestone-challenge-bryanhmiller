@@ -1,7 +1,19 @@
+var carCards = document.getElementById("parking-spot");
+
 function startTheCarLot() {
 	CarLot.loadJSON();
 }
 
+function populateCarCards() {
+	var carArray = CarLot.getCar();
+	var carInfo = "";
+	for ( i = 0 ; i < carArray.length ; i++) {
+		var currentCar = carArray[i];
+		carInfo += `<div class="col-sm-6 col-md-6 thumbnail car-${i}">`;
+		carInfo += `</div>`;
+	}
+	carCards.innerHTML = carInfo;
+}
 
 
 startTheCarLot();
