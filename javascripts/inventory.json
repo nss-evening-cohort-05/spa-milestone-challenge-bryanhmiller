@@ -4,25 +4,25 @@
       "make": "Ford",
       "model": "Boss 302 Mustang",
       "year": "1969",
-      "price": 0.10,
-      "picture": "url(http://engineswap.wpengine.netdna-cdn.com/wp-content/uploads/2015/04/1969-Mustang-With-A-Coyote-V8-03-1024x576.jpg)",
+      "price": "25000",
+      "image": "http://engineswap.wpengine.netdna-cdn.com/wp-content/uploads/2015/04/1969-Mustang-With-A-Coyote-V8-03-1024x576.jpg",
       "description": "This 1969 Ford Mustang was built by Restomod Performance in collaboration with Valvoline Australia. The project kept the engine displacement the same but increased the power and technology by about 42 years. The original 302 ci V8 was replaced by a 5.0 L (302 ci) Coyote V8 from a Mustang GT."
     },
     {
       "make": "BMW",
       "model": "Iso Isetta",
       "year": "1955",
-      "price": 0.25,
-      "picture": "url(http://classiccarweekly.files.wordpress.com/2012/12/1955-iso-isetta.jpg)",
+      "price": "20000",
+      "image": "http://classiccarweekly.files.wordpress.com/2012/12/1955-iso-isetta.jpg",
       "description": "It used a front-hinged door and a 9.5 horsepower 236cc split-single two-stroke engine. Top speed was 47 mph but the design caught on and when Rivolta wanted to focus on sports cars, he licensed the design out to multiple companies all over the world. Produced from 1953 until 1955, only about 1,000 were built. But it was the first. This one should sell for between $30,000-$40,000."
     },
     {
       "make": "VW",
       "model": " Karmann Ghia",
       "year": "1969",
-      "price": 0.15,
-      "picture": "url(http://davidwolanski.com/wp-content/uploads/2012/02/IMG_7554.jpg)",
-      "description": ""
+      "price": "15000",
+      "image": "http://davidwolanski.com/wp-content/uploads/2012/02/IMG_7554.jpg",
+      "description": "1969 Volkswagen Karmann Ghia Coupe for purchase. The 1971 Volkswagen Karmann Ghia offered here originally resided in Florida for many years, now it is in Tennessee. The car was always garage kept and well cared for. The Karmann Ghia just recently received a new clutch and throw out bearing. The chrome is nice and shiny and shows well also. The 4 cylinder engine runs well and is mated to a 4 speed manual transmission. This car is sure to put a smile on your face."
     }
   ]
 }
