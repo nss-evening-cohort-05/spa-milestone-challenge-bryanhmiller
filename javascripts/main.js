@@ -9,7 +9,9 @@ function populateCarCards() {
 	var carInfo = "";
 	for ( i = 0 ; i < carArray.length ; i++) {
 		var currentCar = carArray[i];
+		console.log("currentCar", currentCar);
 		carInfo += `<div class="col-sm-6 col-md-6 thumbnail car-${i}">`;
+		carInfo += `<img src="${currentCar.image}"/>`;
 		carInfo += `</div>`;
 	}
 	carCards.innerHTML = carInfo;

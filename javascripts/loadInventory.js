@@ -10,17 +10,21 @@ var CarLot = (function(carInventory){
 	}
 
 	carInventory.carParse = function() {
-		console.log("loaded");
-		var data = JSON.parse(this.responseText);
-		console.log("data", data)
+		var carData = JSON.parse(this.responseText);
+		CarLot.setCar(carData);
 	}
 
 	carInventory.carFail = function(){
 		console.log("boooo");
 	}
 
-	carInventory.setCar = function(newCar) {
-		carArray.push(newCar);
+	carInventory.setCar = function(xhrData) {
+		var currentCar;
+		for ( j = 0; j < xhrData.cars.length; j++ ) { 
+			currentCar = xhrData.cars[j];
+			carArray.push(currentCar);
+		}
+		console.log("carArray", carArray);	
 	}
 
 	carInventory.getCar = function() {
