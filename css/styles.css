@@ -1,4 +1,9 @@
 body {
-	background-image: url("http://wallpapercave.com/wp/wp1865381.jpg");
+	background-color: blue;
+/*	background-image: url("http://wallpapercave.com/wp/wp1865381.jpg");
 	object-fit: cover;
+*/}
+
+#card {
+	height: 500px;
 }

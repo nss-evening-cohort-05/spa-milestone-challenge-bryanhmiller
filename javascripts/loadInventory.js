@@ -10,8 +10,9 @@ var CarLot = (function(carInventory){
 	}
 
 	carInventory.carParse = function() {
-		var carData = JSON.parse(this.responseText);
-		CarLot.setCar(carData);
+		var carData = JSON.parse(this.responseText).cars;
+		console.log("carData", carData);
+		CarLot.populateCarCards(carData);
 	}
 
 	carInventory.carFail = function(){
@@ -24,7 +25,6 @@ var CarLot = (function(carInventory){
 			currentCar = xhrData.cars[j];
 			carArray.push(currentCar);
 		}
-		console.log("carArray", carArray);	
 	}
 
 	carInventory.getCar = function() {
