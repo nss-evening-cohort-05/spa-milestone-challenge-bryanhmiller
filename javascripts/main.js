@@ -12,12 +12,10 @@ function startTheCarLot() {
 		var carInfo = "";
 		for (var i = 0 ; i < carArray.length ; i++) {
 			currentCar = carArray[i];
-			console.log(i);
-			console.log("currentCar", currentCar);
-			carInfo += `<div id="card" class="col-sm-6 col-md-4 thumbnail car-${i}">`;
-			carInfo += `<section>${currentCar.year} ${currentCar.make} ${currentCar.model}</section>`;
-			carInfo += `<img src="${currentCar.image}"/>`;
-			carInfo += `<p id="${i}">${currentCar.description}</p>`;
+			carInfo += `<div id="card" class="col-sm-6 col-md-3 thumbnail car-${i}">`;
+			carInfo += `<section class="car-${i}">${currentCar.year} ${currentCar.make} ${currentCar.model}</section>`;
+			carInfo += `<img class="car-${i}" src="${currentCar.image}"/>`;
+			carInfo += `<p class="car-${i}" id="${i}">${currentCar.description}</p>`;
 			carInfo += `</div>`;
 		}
 		carCards.innerHTML = carInfo;

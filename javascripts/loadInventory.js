@@ -11,7 +11,6 @@ var CarLot = (function(carInventory){
 
 	carInventory.carParse = function() {
 		var carData = JSON.parse(this.responseText).cars;
-		console.log("carData", carData);
 		CarLot.populateCarCards(carData);
 	}
 
