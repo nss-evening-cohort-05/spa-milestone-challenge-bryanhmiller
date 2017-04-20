@@ -1,6 +1,8 @@
 var CarLot = (function(carInventory){
 	var carArray = [];
 
+// 2a. When your page first loads, you need to use an XHR to load the contents of the JSON 
+// file, 
 	carInventory.loadJSON = function() {
 		var carInventoryRequest = new XMLHttpRequest();
 		carInventoryRequest.addEventListener("load", CarLot.carParse);
@@ -9,6 +11,7 @@ var CarLot = (function(carInventory){
 		carInventoryRequest.send()
 	}
 
+// 2b and parse them into a native JavaScript object.
 	carInventory.carParse = function() {
 		var carData = JSON.parse(this.responseText).cars;
 		CarLot.populateCarCards(carData);
