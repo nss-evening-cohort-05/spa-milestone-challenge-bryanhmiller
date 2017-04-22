@@ -1,4 +1,11 @@
 var CarLot = (function(carEvent){
+// 1. Create one global variable (e.g. `CarLot`) and use the IIFE pattern to augment 
+// it two times in separate JavaScript files.
+// 3. The second IIFE should augment the original one with a function that creates all 
+// of the `eventHandlers` that you need for the application. Name the function 
+// `activateEvents`.
+
+
 	var carCards = document.getElementById("parking-spot");
 	var carInput = document.getElementById("input-box");
 	var carInformation = document.getElementsByClassName("thumbnail");
@@ -7,6 +14,10 @@ var CarLot = (function(carEvent){
 // 8. When you click on one of the car elements, change the width of the border to a 
 // higher value, and change the background color to any other color of your choosing.
 	carEvent.clickCard = function(event) {
+
+// 4b.  The other function changes the thickness of the border of a car 
+// element, and changes its background color. The function must accept two arguments.
+//     1. A car DOM element that was clicked on.
 		for (var q = 0; q < carInformation.length; q++) {
 			if (event.target.tagName === "DIV" && event.target.className === "col-sm-6 col-md-3 thumbnail car-" + q) {
 				event.target.classList.add("wider-border");
@@ -22,18 +33,28 @@ var CarLot = (function(carEvent){
 	carEvent.bindingToDescription = function(event) {
 	  for (u = 0; u < carInformation.length; u++) {
 	    if (event.keyCode === 13) {
-	      if (carCardLink === "car-" + u) {
-	        var resetBorder = document.getElementsByClassName(carCardLink);  
-	        for (var x = 0; x < resetBorder.length; x++) {
-	          if (resetBorder[x].tagName === "DIV") {
-	            resetBorder[x].classList.remove("wider-border");
-	          }
+	      	if (carCardLink === "car-" + u) {
+
+// 4a. The final IIFE should augment the object with two more functions. One function 
+// resets the border thickness and background color for each car element back to the 
+// original values. 
+	        	var resetBorder = document.getElementsByClassName(carCardLink);  
+	        	for (var x = 0; x < resetBorder.length; x++) {
+	          		if (resetBorder[x].tagName === "DIV") {
+	            	resetBorder[x].classList.remove("wider-border");
+	          	}
 	        }
-	      }
-	      carEvent.clearInput();
+	    }
+	    carEvent.clearInput();
 	    } else if (carCardLink === "car-" + u) {
-	      var additionalDescription = document.getElementById(u);
-	      additionalDescription.innerHTML = carInput.value;
+
+// 9. Also, on click of the car element, clear the value of the text input in the 
+// navbar, and put the cursor in the text input.
+// 10. When you start typing into the navbar's text input, the **description**, and only 
+// that property, of the currently selected car should be bound to what you are typing 
+// in and match it exactly.
+		    var additionalDescription = document.getElementById(u);
+		    additionalDescription.innerHTML = carInput.value;
 	    }  
 	  }
 	}
