@@ -4,12 +4,17 @@ body {
 	object-fit: cover;
 */}
 
+
+/*7. Make sure that each car card element has a CSS class which adds a black border 
+around it.*/
 .thumbnail {
 	height: 500px;
 	margin: 20px;
 	border: 5px solid black;
 }
 
+/*8. When you click on one of the car elements, change the width of the border to a 
+higher value, and change the background color to any other color of your choosing.*/
 .wider-border {
 	border: 10px solid black;
 	background-color: yellow;
