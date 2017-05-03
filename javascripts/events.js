@@ -23,36 +23,43 @@ var CarLot = (function(carEvent){
 				event.target.classList.add("wider-border");
 		    } else if (event.target.className === "car-" + q) {
 		    	event.target.parentNode.classList.add("wider-border");
+		    } else if (event.target.className !== "col-sm-6 col-md-3 thumbnail car-" + q || event.target.className !== "car-" + q) {
+		    	
 		    }
 		}
 	    carInput.focus();
-	    carCardLink = event.target.className;
+  	    carCardLink = event.target.className;
+  	    if (carCardLink === "car-" + q) {
+  	    	carCardLink = carCardLink.parentNode;
+  	    }
+	    console.log(carCardLink);
 	    carInput.addEventListener("keyup", carEvent.bindingToDescription);
 	}
 
-	carEvent.bindingToDescription = function(event) {
-	  for (u = 0; u < carInformation.length; u++) {
-	    if (event.keyCode === 13) {
-	      	if (carCardLink === "car-" + u) {
+
 
 // 4a. The final IIFE should augment the object with two more functions. One function 
 // resets the border thickness and background color for each car element back to the 
 // original values. 
-	        	var resetBorder = document.getElementsByClassName(carCardLink);  
-	        	for (var x = 0; x < resetBorder.length; x++) {
-	          		if (resetBorder[x].tagName === "DIV") {
-	            	resetBorder[x].classList.remove("wider-border");
+		carEvent.bindingToDescription = function(event) {
+		  for (var u = 0; u < carInformation.length; u++) {
+		    if (event.keyCode === 13) {
+		    	var resetBorder = document.getElementsByClassName(carCardLink);  
+		      	if (carCardLink === "car-" + u) {
+			    	for (var x = 0; x < resetBorder.length; x++) {
+			      		if (resetBorder[x].tagName === "DIV") {
+			        	resetBorder[x].classList.remove("wider-border");
 	          	}
 	        }
+		    carEvent.clearInput();
 	    }
-	    carEvent.clearInput();
-	    } else if (carCardLink === "car-" + u) {
 
 // 9. Also, on click of the car element, clear the value of the text input in the 
 // navbar, and put the cursor in the text input.
 // 10. When you start typing into the navbar's text input, the **description**, and only 
 // that property, of the currently selected car should be bound to what you are typing 
 // in and match it exactly.
+	    } else if (carCardLink === "car-" + u) {
 		    var additionalDescription = document.getElementById(u);
 		    additionalDescription.innerHTML = carInput.value;
 	    }  
@@ -63,11 +70,6 @@ var CarLot = (function(carEvent){
 	  carInput.blur();
 	  carInput.value = "";
 	}
-
-
-
-
-
 
 carCards.addEventListener("click", carEvent.clickCard);
 
